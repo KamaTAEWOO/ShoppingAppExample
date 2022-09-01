@@ -10,15 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShoppingApp">
         <activity
-            android:name=".ShoppingMart"
-            android:exported="false"
-            android:label="@string/title_activity_shopping_mart"
-            android:theme="@style/Theme.ShoppingApp.NoActionBar" />
+            android:name=".AnotherActivity"
+            android:exported="false">
+        </activity>
         <activity
-            android:name=".Join"
+            android:name=".staggeredGrid.ShoppingMart"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".User.Join"
+            android:exported="false" />
+        <activity
+            android:name=".User.Login"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
