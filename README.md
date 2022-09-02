@@ -22,7 +22,7 @@
 #### 3. Sign in 클릭 시 로그인 창으로 넘어감
 
 ### Shopping Main 화면
-![image](https://user-images.githubusercontent.com/48404941/188081606-f335ddf2-8f3d-4779-b4d5-4acf2d55f584.png)
+![KakaoTalk_20220902_162704576](https://user-images.githubusercontent.com/48404941/188082481-ed08194e-4a64-48d9-95f7-b8166631df42.jpg)
 ![image](https://user-images.githubusercontent.com/48404941/188081617-ea8494e0-81e0-4a17-8ca7-7cb4ca3059dd.png)
 #### 1. 그림 클릭 시 장바구니로 이동
 #### 2. RecyclerView 기능 사용
