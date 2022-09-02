@@ -1,4 +1,4 @@
-package com.example.staggeredgridtest
+package com.example.shoppingapp.staggeredGrid
 
 import android.content.Context
 import android.content.Intent
@@ -10,7 +10,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shoppingapp.R
-import com.example.shoppingapp.staggeredGrid.ShoppingCart
 
 
 class CartAdapter(
@@ -43,7 +42,7 @@ class CartAdapter(
 
             //TextView에 데이터 세팅
             cartName.text = cartVo.name
-            cartPay.text = cartVo.pay.toString()
+            cartPay.text = "$" + cartVo.pay.toString()
         }
     }
 

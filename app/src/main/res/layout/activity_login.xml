@@ -55,6 +55,7 @@
         android:background="@drawable/rectangle_edit"
         android:paddingStart="20dp"
         android:hint="User Password"
+        android:inputType="textPassword"
         android:textColorHint="#B0B0C3"
         android:textColor="#19191C"
         android:textSize="16sp"

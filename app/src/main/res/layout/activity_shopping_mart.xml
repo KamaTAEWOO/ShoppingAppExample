@@ -43,7 +43,19 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_mart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="575dp"
         android:layout_below="@+id/textView1" />
 
+    <Button
+        android:id="@+id/btn_myCart"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:background="@drawable/rectangle_button"
+        android:text="MyCart"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="35dp"
+        />
 </LinearLayout>

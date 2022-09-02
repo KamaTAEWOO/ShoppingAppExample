@@ -1,16 +1,18 @@
 package com.example.shoppingapp.staggeredGrid
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.shoppingapp.R
-import com.example.staggeredgridtest.MartAdapter
-import com.example.staggeredgridtest.MartVo
+import com.example.shoppingapp.User.Join
 
 class ShoppingMart : AppCompatActivity() {
     var recycler_view: RecyclerView? = null
+    var btn_myCart: Button? = null
 
     private var userList = arrayListOf<MartVo>(
         MartVo("Balcony repair", "img1", "서울특별시", 24, "img1"),
@@ -36,11 +38,17 @@ class ShoppingMart : AppCompatActivity() {
         setContentView(R.layout.activity_shopping_mart)
 
         recycler_view = findViewById(R.id.recycler_view_mart)
+        btn_myCart = findViewById(R.id.btn_myCart)
 
         val mAdapter = MartAdapter(this, userList)
         recycler_view!!.adapter = mAdapter
 
         val staggeredGridLayoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
         recycler_view!!.layoutManager = staggeredGridLayoutManager
+
+        btn_myCart!!.setOnClickListener{
+            startActivity(Intent(this, ShoppingCart::class.java)) //intent와 같음!
+            finish()
+        }
     }
 }
