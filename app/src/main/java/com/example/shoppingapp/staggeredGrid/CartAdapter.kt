@@ -10,53 +10,52 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shoppingapp.R
+import com.example.shoppingapp.staggeredGrid.ShoppingCart
 
 
-class CustomAdapter(
-    private val context: Context, private val dataList: ArrayList<DataVo>
-) : RecyclerView.Adapter<CustomAdapter.ItemViewHolder>() {
+class CartAdapter(
+    private val context: Context, private val dataList: ArrayList<CartVo>
+) : RecyclerView.Adapter<CartAdapter.ItemViewHolder>() {
 
     var mPosition = 0
- 
+
 
     inner class ItemViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
 
-        private val userPhoto = itemView.findViewById<ImageView>(R.id.userImg)
-        private val userName = itemView.findViewById<TextView>(R.id.userNameTxt)
-        private val userPay = itemView.findViewById<TextView>(R.id.payTxt)
-        private val userAddress: TextView = itemView.findViewById<TextView>(R.id.addressTxt)
+        private val cartPhoto = itemView.findViewById<ImageView>(R.id.img_picture)
+        private val cartName = itemView.findViewById<TextView>(R.id.txt_name)
+        private val cartPay = itemView.findViewById<TextView>(R.id.txt_price)
 
-        fun bind(dataVo: DataVo, context: Context) {
-            if (dataVo.photo != "") {
+        fun bind(cartVo: CartVo, context: Context) {
+            if (cartVo.photo != "") {
                 val resourceId =
-                    context.resources.getIdentifier(dataVo.photo, "drawable", context.packageName)
+                    context.resources.getIdentifier(cartVo.photo, "drawable", context.packageName)
 
                 if (resourceId > 0) {
-                    userPhoto.setImageResource(resourceId)
+                    cartPhoto.setImageResource(resourceId)
                 } else {
-                    userPhoto.setImageResource(R.mipmap.ic_launcher_round)
+                    cartPhoto.setImageResource(R.mipmap.ic_launcher_round)
                 }
             } else {
-                userPhoto.setImageResource(R.mipmap.ic_launcher_round)
+                cartPhoto.setImageResource(R.mipmap.ic_launcher_round)
             }
 
             //TextView에 데이터 세팅
-            userName.text = dataVo.name
-            userPay.text = dataVo.pay.toString()
-            userAddress.text = dataVo.address
+            cartName.text = cartVo.name
+            cartPay.text = cartVo.pay.toString()
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.view_item_layout, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.view_item_cart, parent, false)
         return ItemViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.bind(dataList[position], context)
-       
-        holder.itemView.setOnClickListener { view -> 
+
+        holder.itemView.setOnClickListener { view ->
             Toast.makeText(view.context, "$position 아이템 클릭!", Toast.LENGTH_SHORT).show()
 
             // open another activity on item click
@@ -66,7 +65,7 @@ class CustomAdapter(
             context.startActivity(intent) // start Intent
         }
 
-        holder.itemView.setOnLongClickListener { view -> 
+        holder.itemView.setOnLongClickListener { view ->
             Toast.makeText(view.context, "$position 아이템 롱클릭!", Toast.LENGTH_SHORT).show()
             return@setOnLongClickListener true
         }

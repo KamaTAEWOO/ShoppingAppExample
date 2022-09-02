@@ -1,35 +1,38 @@
-package com.example.staggeredgridtest
+package com.example.shoppingapp.staggeredGrid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.shoppingapp.R
+import com.example.staggeredgridtest.CartAdapter
+import com.example.staggeredgridtest.CartVo
 
 class ShoppingCart : AppCompatActivity() {
-    var imageView1: ImageView? = null
+    var recycler_view: RecyclerView? = null
+
+    private var userList = arrayListOf<CartVo>(
+        CartVo("Balcony repair", 24, "img1"),
+        CartVo("Redecorating", 20, "img2"),
+        CartVo("Painting works",30, "img3"),
+        CartVo("Lucy",20, "img4"),
+        CartVo("pure", 20, "img5"),
+        CartVo("purity",20, "img6"),
+        CartVo("Seraphic",20, "img9")
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_another)
+        setContentView(R.layout.activity_shopping_cart)
 
-//        var receiveData1 = intent.getStringExtra("data1")
-//        var receiveData2 = intent.getIntExtra("data2", 0)
-        imageView1 = findViewById(R.id.imageView1)
+        recycler_view = findViewById(R.id.recycler_view_cart)
 
-        var receiveData1 = intent.getStringExtra("image_name")
+        val mAdapter = CartAdapter(this, userList)
+        recycler_view!!.adapter = mAdapter
 
-        if (receiveData1 != "") {
-            val resourceId =
-                resources.getIdentifier(receiveData1, "drawable", packageName)
-
-            if (resourceId > 0) {
-                imageView1!!.setImageResource(resourceId)
-            } else {
-                imageView1!!.setImageResource(R.mipmap.ic_launcher_round)
-            }
-        } else {
-            imageView1!!.setImageResource(R.mipmap.ic_launcher_round)
-        }
+        val staggeredGridLayoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL)
+        recycler_view!!.layoutManager = staggeredGridLayoutManager
 
     }
 }
