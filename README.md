@@ -7,4 +7,4 @@
 
 ### Logo 화면
 ![image](https://user-images.githubusercontent.com/48404941/188081050-43f612d4-b868-4939-9354-e0140c111b68.png)
-####-> 3초 후 다음 페이지 넘어감.
+#### -> 3초 후 다음 페이지 넘어감.
