@@ -27,7 +27,7 @@
             android:text="김태우"
             android:layout_gravity="center"
             android:paddingEnd="30dp"
-            android:textColor="#131010"
+            android:textColor="#525464"
             android:textSize="15sp"
             android:textStyle="bold" />
 
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="$10"
-            android:textColor="#000000"
+            android:textColor="#525464"
             android:textSize="15sp"
             android:visibility="visible" />
 

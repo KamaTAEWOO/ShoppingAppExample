@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     tools:context=".User.Login">
 
     <TextView
         android:id="@+id/txt_sign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:text="Sign in"
         android:textColor="#525464"
         android:textSize="18sp"
@@ -81,6 +82,7 @@
         android:layout_marginTop="64dp"
         android:text="Don't have an account?"
         android:textSize="16sp"
+        android:textColor="#525464"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_login"
@@ -91,7 +93,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:background="#fff"
+        android:background="@android:color/transparent"
         android:paddingEnd="10dp"
         android:text="Sign Up"
         android:textColor="#FF5722"
