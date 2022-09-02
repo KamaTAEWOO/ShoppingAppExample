@@ -1,16 +1,13 @@
 package com.example.shoppingapp.User
 
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.shoppingapp.R
-import com.example.shoppingapp.staggeredGrid.ShoppingCart
 import com.example.shoppingapp.staggeredGrid.ShoppingMart
 
 class Login : AppCompatActivity() {

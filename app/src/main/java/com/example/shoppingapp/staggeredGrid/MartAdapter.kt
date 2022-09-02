@@ -48,7 +48,7 @@ class MartAdapter(
 
             //TextView에 데이터 세팅
             userName.text = dataVo.name
-            userPay.text = dataVo.pay.toString()
+            userPay.text = "$" + dataVo.pay.toString()
             userAddress.text = dataVo.address
         }
     }
